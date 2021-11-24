@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_17_152847) do
+ActiveRecord::Schema.define(version: 2021_11_24_203914) do
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "quantity"
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer "subtotal"
@@ -20,4 +29,5 @@ ActiveRecord::Schema.define(version: 2021_11_17_152847) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "line_items", "orders"
 end
