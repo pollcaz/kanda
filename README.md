@@ -1,4 +1,8 @@
 # README
+Exercise realized by Paulo Carmona
+Ruby developer
+email: pcarmonaz@gamil.com
+gitgub user: pollcaz
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
