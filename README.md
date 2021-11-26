@@ -1,7 +1,7 @@
 # README
 Exercise realized by Paulo Carmona
 Ruby developer
-email: pcarmonaz@gamil.com
+email: pcarmonaz@gmail.com
 gitgub user: pollcaz
 
 This README would normally document whatever steps are necessary to get the
@@ -10,6 +10,7 @@ application up and running.
 Things you may want to cover:
 
 # Ruby version: 2.6.8
+# Rails version: 6.1.4
 
 # System dependencies: check Gemfile
 
@@ -18,6 +19,7 @@ $ execute: bundle install
 
 # Database creation
 $ bundle exec rake db:create
+$ bundle exec rake db:migrate
 
 # Database initialization: Not need it
 
@@ -38,4 +40,7 @@ $ bundle exec rails s
 ## orders/:id endpoint to update line_items belongs to an order, example: /api/v1/orders/1
 * payload: { order: { id: 1,  line_items_attributes: [{ id: 1, quantity: 2, amount: 10 }, { id: 2, quantity: 1, amount: 20 }] } }
 
-* ...
+## TODO: 
+* Add swager gem to improve api documentation 
+* Add Rubocop to apply best practices and clean the code
+* Add Rubocop Guard to ensure with every change api keep working well.
