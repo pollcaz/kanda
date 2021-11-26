@@ -1,4 +1,14 @@
 class LineItem < ApplicationRecord
-  belongs_to :order #, class_name: 'Order', foreign_key: :order_id
-  validates :order_id, :quantity, :amount, presence: true
+  belongs_to :order
+  validates :quantity, :amount, presence: true
+
+  after_save :do_recalculate_order
+
+  private
+  
+  def do_recalculate_order
+    order = self.order
+    order.reload
+    order.recalculate!
+  end 
 end
